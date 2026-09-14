@@ -1,0 +1,14 @@
+.header-actions,.footer-links{display:flex;align-items:center;gap:22px}
+.github-link{font:700 11px Manrope,Arial,sans-serif;color:var(--muted);transition:color .2s}
+.github-link:hover{color:var(--orange)}
+.system-shelf{margin-top:80px;border-top:1px solid var(--ink)}
+.shelf-label{font:500 9px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin:17px 0}
+.system-shelf article{display:grid;grid-template-columns:55px minmax(0,1fr) 125px;align-items:center;gap:15px;border-top:1px solid var(--line);padding:21px 0;transition:padding .25s,background .25s}
+.system-shelf article:hover{background:#e9ebe5;padding-left:13px;padding-right:13px}
+.system-shelf article>span,.system-shelf small{font:500 10px 'DM Mono',monospace}
+.system-shelf article>span{color:var(--orange)}
+.system-shelf h3{font-size:18px;letter-spacing:-.04em;margin:0 0 5px}
+.system-shelf p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
+.system-shelf small{text-align:right;color:var(--muted)}
+.footer-links{gap:18px}.footer-links a{color:var(--lime);font-weight:700}
+@media(max-width:760px){.github-link{display:none}.system-shelf{margin-top:55px}.system-shelf article{grid-template-columns:35px 1fr;padding:18px 0}.system-shelf small{display:none}.footer-links{gap:13px}}
