@@ -18,3 +18,15 @@ menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () 
   menu.classList.remove('open');
   menuToggle?.setAttribute('aria-expanded', 'false');
 }));
+
+document.querySelectorAll('[data-toggle-case]').forEach((trigger) => {
+  const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+  const label = trigger.querySelector('.toggle-label');
+  if (!panel) return;
+  trigger.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', String(isOpen));
+    trigger.classList.toggle('is-open', isOpen);
+    if (label) label.textContent = isOpen ? 'Hide case study' : 'View case study';
+  });
+});

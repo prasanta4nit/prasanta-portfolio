@@ -106,21 +106,102 @@
           <article class="project project-featured reveal">
             <div class="project-visual quote-visual"><div class="quote-grid"></div><div class="project-index">01</div><div class="quote-panel"><small>STRATAVAR / CISCO 360</small><h3>Lead intelligence,<br />from signal to action.</h3><div class="metric-row"><span>React + Vite</span><span>FastAPI</span><span>AWS</span></div></div><div class="floating-chip">Salesforce<br /><b>Connected</b></div><div class="corner-note">BUILD / 2026</div></div>
             <div class="project-meta"><div><p>01 / Enterprise platform</p><h3>Cisco 360 LeadGen</h3></div><p>A full-stack estimate and lead system, secured with passwordless access and connected to Salesforce.</p></div>
+            <button class="project-toggle" type="button" data-toggle-case aria-expanded="false" aria-controls="case-cisco360"><span class="toggle-label">View case study</span> <span class="toggle-icon">↓</span></button>
+            <div class="project-case" id="case-cisco360">
+              <p class="case-diagram-label">Architecture</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">React + Vite UI</span><span class="flow-arrow">→</span><span class="flow-step">Cognito passwordless auth</span><span class="flow-arrow">→</span><span class="flow-step">FastAPI (AWS)</span><span class="flow-arrow">→</span><span class="flow-step accent">RDS MySQL</span><span class="flow-arrow">→</span><span class="flow-step">Salesforce</span></div>
+              <div class="case-grid">
+                <div class="case-block"><h4>Problem</h4><p>Sales teams needed a fast way to generate Cisco estimates and leads without manual re-entry into Salesforce or shared, insecure logins.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Led the backend build end-to-end — the FastAPI service, the Cognito passwordless auth flow, the RDS schema, and the Salesforce sync.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>React, Vite, FastAPI, Amazon Cognito, RDS (MySQL), Salesforce APIs, AWS.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>Passwordless auth is easy to get wrong on the security side (session handling, link/OTP replay), and keeping lead data in sync with Salesforce without duplicates took care.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>A Cognito-backed passwordless login for frictionless, secure access; a FastAPI service over RDS MySQL as the system of record; a reliable one-way sync so leads land in Salesforce automatically.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>Sales teams go from a Cisco estimate to a tracked Salesforce lead without manual hand-off or shared credentials.</p></div>
+              </div>
+            </div>
           </article>
           <article class="project reveal">
             <div class="project-visual mcp-visual"><div class="project-index">02</div><div class="mcp-circle">MCP</div><div class="mcp-line one"></div><div class="mcp-line two"></div><div class="tiny-node n1">Claude</div><div class="tiny-node n2">Quoting</div><div class="tiny-node n3">Rebates</div></div>
             <div class="project-meta"><div><p>02 / Agent infrastructure</p><h3>AI-ready internal tools</h3></div><p>An MCP server exposing secure quoting and rebate-calculation capabilities to AI agents.</p></div>
+            <button class="project-toggle" type="button" data-toggle-case aria-expanded="false" aria-controls="case-mcp"><span class="toggle-label">View case study</span> <span class="toggle-icon">↓</span></button>
+            <div class="project-case" id="case-mcp">
+              <p class="case-diagram-label">Architecture</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">Claude (Bedrock)</span><span class="flow-arrow">→</span><span class="flow-step accent">MCP server</span><span class="flow-arrow">→</span><span class="flow-step">Quoting + rebate tools</span><span class="flow-arrow">→</span><span class="flow-step">Internal pricing systems</span></div>
+              <div class="case-grid">
+                <div class="case-block"><h4>Problem</h4><p>Internal quoting and rebate calculations lived behind manual workflows and internal-only APIs that an AI agent couldn't safely call.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Designed and built the MCP server, defined the tool schemas and permissions, and wired Bedrock-based routing between agent intent and the right tool.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>MCP (Model Context Protocol), AWS Bedrock, Claude tool-use, Python/FastAPI, internal pricing APIs.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>Exposing internal pricing and rebate logic to an agent safely — scoping exactly what each tool call can see and do — without opening the underlying systems directly.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>Wrapped quoting and rebate calculations behind narrowly-scoped MCP tools, so an agent gets exactly the capability it needs and nothing more.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>Internal pricing and rebate logic became something an AI agent can use directly and safely, instead of staying locked behind manual, human-only workflows.</p></div>
+              </div>
+            </div>
           </article>
           <article class="project reveal">
             <div class="project-visual parser-visual"><div class="project-index">03</div><div class="document"><span></span><span></span><span></span><span></span><span></span></div><div class="scan"></div><div class="parser-label">STRUCTURED<br />EXTRACTION <b>SMART</b></div></div>
             <div class="project-meta"><div><p>03 / Intelligent automation</p><h3>Document intelligence pipeline</h3></div><p>Schema-driven PDF quote parsing with model escalation and self-correction built in.</p></div>
+            <button class="project-toggle" type="button" data-toggle-case aria-expanded="false" aria-controls="case-doc-intel"><span class="toggle-label">View case study</span> <span class="toggle-icon">↓</span></button>
+            <div class="project-case" id="case-doc-intel">
+              <p class="case-diagram-label">Architecture</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">PDF / Excel quote</span><span class="flow-arrow">→</span><span class="flow-step">Schema-constrained extraction</span><span class="flow-arrow">→</span><span class="flow-step">Self-correction check</span><span class="flow-arrow">→</span><span class="flow-step">Model escalation</span><span class="flow-arrow">→</span><span class="flow-step accent">Structured quote data</span></div>
+              <div class="case-grid">
+                <div class="case-block"><h4>Problem</h4><p>Vendor quotes arrive as unstructured PDFs in inconsistent formats, making reliable structured-data extraction hard to trust.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Designed the extraction pipeline end-to-end, including the schema constraints, the self-correction loop, and the escalation logic.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>Python, LLM-based extraction, schema validation, model escalation logic.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>Getting consistent, trustworthy structured output from documents that vary widely in layout and quality, without a human reviewing every one.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>Constrained extraction to a strict schema, added a self-correction pass that catches its own low-confidence output, and escalated only the genuinely hard cases to a stronger model.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>Turned inconsistent vendor PDFs into structured, trustworthy quote data without a human checking every extraction.</p></div>
+              </div>
+            </div>
           </article>
         </div>
         <div class="system-shelf reveal">
           <p class="shelf-label">Also shipped</p>
-          <article><span>04</span><div><h3>PyQM</h3><p>Salesforce-triggered async job execution with SQS queuing and Coralogix observability.</p></div><small>FastAPI / SQS</small></article>
-          <article><span>05</span><div><h3>Distributor parser</h3><p>Configuration-first Excel and PDF normalization across complex vendor formats.</p></div><small>Python / APIs</small></article>
-          <article><span>06</span><div><h3>Cloud optimization</h3><p>Infrastructure modernization and cost optimization across RIs, Savings Plans, and Graviton.</p></div><small>AWS / IaC</small></article>
+          <article>
+            <button class="shelf-row" type="button" data-toggle-case aria-expanded="false" aria-controls="case-pyqm"><span>04</span><div><h3>PyQM</h3><p>Salesforce-triggered async job execution with SQS queuing and Coralogix observability.</p></div><small>FastAPI / SQS</small><i class="shelf-chevron">↓</i></button>
+            <div class="project-case" id="case-pyqm">
+              <p class="case-diagram-label">Architecture</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">Salesforce trigger</span><span class="flow-arrow">→</span><span class="flow-step accent">SQS queue</span><span class="flow-arrow">→</span><span class="flow-step">FastAPI worker</span><span class="flow-arrow">→</span><span class="flow-step">Coralogix observability</span></div>
+              <div class="case-grid">
+                <div class="case-block"><h4>Problem</h4><p>Long-running jobs triggered from Salesforce needed to run without blocking Salesforce or getting lost if something failed.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Built the FastAPI service and the SQS-based queuing so Salesforce-triggered work runs reliably in the background.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>FastAPI, Amazon SQS, Coralogix.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>Making sure jobs triggered from Salesforce don't get dropped or double-processed, with enough visibility to know when something actually failed.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>Queued every job through SQS instead of processing inline, and instrumented the path with Coralogix so failures are visible instead of silent.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>Salesforce-triggered work runs reliably in the background with clear visibility when something goes wrong.</p></div>
+              </div>
+            </div>
+          </article>
+          <article>
+            <button class="shelf-row" type="button" data-toggle-case aria-expanded="false" aria-controls="case-distributor"><span>05</span><div><h3>Distributor parser</h3><p>Configuration-first Excel and PDF normalization across complex vendor formats.</p></div><small>Python / APIs</small><i class="shelf-chevron">↓</i></button>
+            <div class="project-case" id="case-distributor">
+              <p class="case-diagram-label">Architecture</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">Vendor Excel / PDF</span><span class="flow-arrow">→</span><span class="flow-step accent">Config-driven parser</span><span class="flow-arrow">→</span><span class="flow-step">Normalized quote data</span><span class="flow-arrow">→</span><span class="flow-step">Salesforce</span></div>
+              <div class="case-grid">
+                <div class="case-block"><h4>Problem</h4><p>Cisco, TD SYNNEX, and Ingram Micro each ship quotes in their own Excel/PDF format, making normalization a constant maintenance burden.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Designed the configuration-first parsing approach and built the REST integrations into each distributor and Salesforce.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>Python, Excel/PDF parsing, REST APIs, Salesforce REST, Bulk, and Metadata APIs.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>A new or changed vendor format used to mean new code — the goal was to make that a configuration change instead.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>Built a configuration-first parser where each vendor's format is described in config, not hard-coded, so format changes don't require a redeploy.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>Distributor format changes became a config update instead of an engineering task, and the same pipeline scaled across three major distributors.</p></div>
+              </div>
+            </div>
+          </article>
+          <article>
+            <button class="shelf-row" type="button" data-toggle-case aria-expanded="false" aria-controls="case-cloud-opt"><span>06</span><div><h3>Cloud optimization</h3><p>Infrastructure modernization and cost optimization across RIs, Savings Plans, and Graviton.</p></div><small>AWS / IaC</small><i class="shelf-chevron">↓</i></button>
+            <div class="project-case" id="case-cloud-opt">
+              <p class="case-diagram-label">Architecture</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">Usage audit (EC2 / RDS)</span><span class="flow-arrow">→</span><span class="flow-step">Graviton + Reserved Instances / Savings Plans</span><span class="flow-arrow">→</span><span class="flow-step accent">CloudFormation (IaC)</span></div>
+              <div class="case-grid">
+                <div class="case-block"><h4>Problem</h4><p>AWS spend and infrastructure had grown organically without a deliberate cost or performance strategy.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Led the audit and modernization work and codified the resulting infrastructure as CloudFormation templates.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>AWS EC2, RDS, Graviton, Reserved Instances, Savings Plans, CloudFormation.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>Cutting cost without hurting performance or reliability meant understanding real usage patterns before committing to RI or Savings Plan terms.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>Matched workloads to Graviton where compatible, committed to RIs/Savings Plans based on actual usage, and moved the result into CloudFormation.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>Lowered AWS infrastructure cost while keeping the infrastructure reproducible and version-controlled.</p></div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
