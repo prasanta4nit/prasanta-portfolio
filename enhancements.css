@@ -1,8 +1,14 @@
 .skip-link{position:absolute;left:16px;top:-60px;z-index:20;background:var(--ink);color:white;padding:12px 18px;font:700 12px Manrope,Arial,sans-serif;border-radius:2px;transition:top .2s}
 .skip-link:focus{top:16px}
-.header-actions,.footer-links{display:flex;align-items:center;gap:22px}
-.github-link{font:700 11px Manrope,Arial,sans-serif;color:var(--muted);transition:color .2s}
-.github-link:hover{color:var(--orange)}
+.header-actions,.footer-links{display:flex;align-items:center;gap:18px}
+.header-link{font:700 11px Manrope,Arial,sans-serif;color:var(--muted);transition:color .2s;display:inline-flex;align-items:center;gap:3px}
+.header-link:hover{color:var(--orange)}
+.header-link span{color:var(--orange);font-size:13px}
+.header-actions .resume-link{color:var(--ink);background:var(--lime);padding:8px 12px;font-weight:800}
+.header-actions .resume-link span{color:var(--ink)}
+.header-actions .resume-link:hover{background:var(--ink);color:#fff}
+.header-actions .resume-link:hover span{color:var(--lime)}
+.nav-actions{display:none}
 .system-shelf{margin-top:80px;border-top:1px solid var(--ink)}
 .shelf-label{font:500 9px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin:17px 0}
 .system-shelf article{display:grid;grid-template-columns:55px minmax(0,1fr) 125px;align-items:center;gap:15px;border-top:1px solid var(--line);padding:21px 0;transition:padding .25s,background .25s}
@@ -13,5 +19,5 @@
 .system-shelf p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
 .system-shelf small{text-align:right;color:var(--muted)}
 .footer-links{gap:18px}.footer-links a{color:var(--lime);font-weight:700}
-@media(max-width:760px){.github-link{display:none}.system-shelf{margin-top:55px}.system-shelf article{grid-template-columns:35px 1fr;padding:18px 0}.system-shelf small{display:none}.footer-links{gap:13px}}
+@media(max-width:760px){.header-actions{display:none}.nav-actions{display:flex;flex-direction:column;gap:16px;margin-top:22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);font:700 12px Manrope,Arial,sans-serif}.nav-actions a{color:white}.system-shelf{margin-top:55px}.system-shelf article{grid-template-columns:35px 1fr;padding:18px 0}.system-shelf small{display:none}.footer-links{gap:13px}}
 .timeline small{display:block;margin-top:14px;font-size:11px;line-height:1.55;color:var(--muted);max-width:210px}.experience-detail{margin-top:84px;border-top:1px solid var(--ink)}.experience-detail article{display:grid;grid-template-columns:.9fr 1.1fr;gap:7vw;padding:35px 0;border-bottom:1px solid var(--line)}.experience-detail span{font:500 9px 'DM Mono',monospace;color:var(--orange);letter-spacing:.06em}.experience-detail h3{margin:12px 0 0;font-size:clamp(21px,2.25vw,31px);line-height:1.1;letter-spacing:-.06em}.experience-detail ul{margin:0;padding:0;list-style:none;display:grid;gap:13px}.experience-detail li{position:relative;padding-left:20px;color:var(--muted);font-size:13px;line-height:1.65}.experience-detail li:before{content:'↗';position:absolute;left:0;color:var(--orange);font-weight:800}@media(max-width:760px){.timeline small{display:none}.experience-detail{margin-top:50px}.experience-detail article{grid-template-columns:1fr;gap:24px;padding:29px 0}.experience-detail h3{font-size:25px}}

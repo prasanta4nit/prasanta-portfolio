@@ -28,4 +28,4 @@ The command will ask you to sign in and then prints the public deployment URL.
 ## Notes
 
 - `vercel.json` keeps URLs clean and does not define a build command.
-- `.vercelignore` deliberately excludes the source resume PDF, so it is not exposed publicly by the deployment.
+- The résumé PDF is deployed and linked from the header's "Download résumé" button.
