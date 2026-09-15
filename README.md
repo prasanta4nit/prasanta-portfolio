@@ -1,4 +1,4 @@
-# Prasanta Gorai Portfolio
+# Prasanta Kumar Gorai Portfolio
 
 A static personal portfolio website. No build step or environment variables are required.
 

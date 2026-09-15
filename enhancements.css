@@ -1,3 +1,5 @@
+.skip-link{position:absolute;left:16px;top:-60px;z-index:20;background:var(--ink);color:white;padding:12px 18px;font:700 12px Manrope,Arial,sans-serif;border-radius:2px;transition:top .2s}
+.skip-link:focus{top:16px}
 .header-actions,.footer-links{display:flex;align-items:center;gap:22px}
 .github-link{font:700 11px Manrope,Arial,sans-serif;color:var(--muted);transition:color .2s}
 .github-link:hover{color:var(--orange)}
