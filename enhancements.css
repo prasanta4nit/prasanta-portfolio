@@ -21,3 +21,12 @@
 .footer-links{gap:18px}.footer-links a{color:var(--lime);font-weight:700}
 @media(max-width:760px){.header-actions{display:none}.nav-actions{display:flex;flex-direction:column;gap:16px;margin-top:22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);font:700 12px Manrope,Arial,sans-serif}.nav-actions a{color:white}.system-shelf{margin-top:55px}.system-shelf article{grid-template-columns:35px 1fr;padding:18px 0}.system-shelf small{display:none}.footer-links{gap:13px}}
 .timeline small{display:block;margin-top:14px;font-size:11px;line-height:1.55;color:var(--muted);max-width:210px}.experience-detail{margin-top:84px;border-top:1px solid var(--ink)}.experience-detail article{display:grid;grid-template-columns:.9fr 1.1fr;gap:7vw;padding:35px 0;border-bottom:1px solid var(--line)}.experience-detail span{font:500 9px 'DM Mono',monospace;color:var(--orange);letter-spacing:.06em}.experience-detail h3{margin:12px 0 0;font-size:clamp(21px,2.25vw,31px);line-height:1.1;letter-spacing:-.06em}.experience-detail ul{margin:0;padding:0;list-style:none;display:grid;gap:13px}.experience-detail li{position:relative;padding-left:20px;color:var(--muted);font-size:13px;line-height:1.65}.experience-detail li:before{content:'↗';position:absolute;left:0;color:var(--orange);font-weight:800}@media(max-width:760px){.timeline small{display:none}.experience-detail{margin-top:50px}.experience-detail article{grid-template-columns:1fr;gap:24px;padding:29px 0}.experience-detail h3{font-size:25px}}
+.tech-stack{margin-top:64px;padding-top:44px;border-top:1px solid #536466}
+.tech-stack-label{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:var(--lime);margin:0 0 26px}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 40px}
+.tech-category h3{font-size:14px;letter-spacing:-.02em;margin:0 0 13px;color:white}
+.tech-tags{display:flex;flex-wrap:wrap;gap:8px}
+.tech-tags span{font:500 10px 'DM Mono',monospace;padding:7px 10px;border:1px solid #536466;color:#c7d2cf;transition:border-color .2s,color .2s}
+.tech-tags span:hover{border-color:var(--lime);color:var(--lime)}
+@media(max-width:760px){.tech-stack{margin-top:48px;padding-top:32px}.tech-grid{grid-template-columns:1fr 1fr;gap:28px 20px}}
+@media(max-width:500px){.tech-grid{grid-template-columns:1fr}}
