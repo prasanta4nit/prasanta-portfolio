@@ -108,15 +108,17 @@
             <div class="project-meta"><div><p>01 / Enterprise platform</p><h3>Cisco 360 LeadGen</h3></div><p>A full-stack estimate and lead system, secured with passwordless access and connected to Salesforce.</p></div>
             <button class="project-toggle" type="button" data-toggle-case aria-expanded="false" aria-controls="case-cisco360"><span class="toggle-label">View case study</span> <span class="toggle-icon">↓</span></button>
             <div class="project-case" id="case-cisco360">
-              <p class="case-diagram-label">Architecture</p>
-              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">React + Vite UI</span><span class="flow-arrow">→</span><span class="flow-step">Cognito passwordless auth</span><span class="flow-arrow">→</span><span class="flow-step">FastAPI (AWS)</span><span class="flow-arrow">→</span><span class="flow-step accent">RDS MySQL</span><span class="flow-arrow">→</span><span class="flow-step">Salesforce</span></div>
+              <p class="case-diagram-label">Architecture — request path</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">Browser</span><span class="flow-arrow">→</span><span class="flow-step">CloudFront + WAF</span><span class="flow-arrow">→</span><span class="flow-step">S3 (static UI) / API Gateway</span><span class="flow-arrow">→</span><span class="flow-step accent">Lambda: FastAPI (VPC)</span><span class="flow-arrow">→</span><span class="flow-step">RDS MySQL (IAM auth)</span><span class="flow-arrow">→</span><span class="flow-step">Salesforce (leads)</span></div>
+              <p class="case-diagram-label">Architecture — daily GDPR compliance path</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">EventBridge (daily)</span><span class="flow-arrow">→</span><span class="flow-step accent">Lambda: GDPR retention</span><span class="flow-arrow">→</span><span class="flow-step">Cognito + Salesforce purge</span></div>
               <div class="case-grid">
                 <div class="case-block"><h4>Problem</h4><p>Sales teams needed a fast way to generate Cisco estimates and leads without manual re-entry into Salesforce or shared, insecure logins.</p></div>
-                <div class="case-block"><h4>My role</h4><p>Led the backend build end-to-end — the FastAPI service, the Cognito passwordless auth flow, the RDS schema, and the Salesforce sync.</p></div>
-                <div class="case-block"><h4>Technology</h4><p>React, Vite, FastAPI, Amazon Cognito, RDS (MySQL), Salesforce APIs, AWS.</p></div>
-                <div class="case-block"><h4>Key challenges</h4><p>Passwordless auth is easy to get wrong on the security side (session handling, link/OTP replay), and keeping lead data in sync with Salesforce without duplicates took care.</p></div>
-                <div class="case-block"><h4>Solution</h4><p>A Cognito-backed passwordless login for frictionless, secure access; a FastAPI service over RDS MySQL as the system of record; a reliable one-way sync so leads land in Salesforce automatically.</p></div>
-                <div class="case-block"><h4>Impact</h4><p>Sales teams go from a Cisco estimate to a tracked Salesforce lead without manual hand-off or shared credentials.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Designed and built the serverless AWS stack end-to-end — the Terraform infrastructure, the FastAPI/Lambda backend, the Cognito auth integration, and the CloudFront/API Gateway routing.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>React, Vite, FastAPI on AWS Lambda (Mangum), API Gateway, CloudFront, S3, Amazon Cognito, RDS MySQL (IAM auth), EventBridge, Terraform, Salesforce APIs.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>Serving a SPA and a serverless API from one CloudFront domain without exposing the raw API Gateway URL, and connecting Lambda to RDS without ever storing a static database password.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>Fronted both the S3-hosted SPA and API Gateway with a single CloudFront distribution, protected by a shared-secret header the Lambda validates; used IAM database authentication for RDS instead of a static password; and isolated a separate EventBridge-scheduled Lambda to handle GDPR purges outside the VPC.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>One public hostname serves the whole product, the API is unreachable except through CloudFront, there's no long-lived database credential anywhere, and GDPR retention is enforced automatically every day.</p></div>
               </div>
             </div>
           </article>
