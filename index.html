@@ -204,6 +204,21 @@
               </div>
             </div>
           </article>
+          <article>
+            <button class="shelf-row" type="button" data-toggle-case aria-expanded="false" aria-controls="case-quote-engine"><span>07</span><div><h3>Quote export engine</h3><p>Template-driven engine that generates multiple Salesforce quote formats from JSON data templates and Excel layout templates.</p></div><small>Python / Excel</small><i class="shelf-chevron">↓</i></button>
+            <div class="project-case" id="case-quote-engine">
+              <p class="case-diagram-label">Architecture</p>
+              <div class="flow-diagram" aria-hidden="true"><span class="flow-step">Salesforce</span><span class="flow-arrow">→</span><span class="flow-step">JSON data template</span><span class="flow-arrow">→</span><span class="flow-step">Data extraction &amp; transform</span><span class="flow-arrow">→</span><span class="flow-step">Excel layout template</span><span class="flow-arrow">→</span><span class="flow-step accent">Dynamic rendering</span><span class="flow-arrow">→</span><span class="flow-step">Final quote</span></div>
+              <div class="case-grid">
+                <div class="case-block"><h4>Problem</h4><p>Every Salesforce quote format needed its own export logic, coupling document layout to application code and making a new or modified format a development task instead of a configuration change.</p></div>
+                <div class="case-block"><h4>My role</h4><p>Designed and built the template-driven export engine — the JSON data template schema, the Excel layout template renderer, and the pipeline connecting Salesforce data to dynamic document generation.</p></div>
+                <div class="case-block"><h4>Technology</h4><p>Python, Salesforce SOQL, JSON data templates, Excel-based layout templates, HTML-formatted content rendering.</p></div>
+                <div class="case-block"><h4>Key challenges</h4><p>Building one rendering engine generic enough to handle arbitrarily different quote structures and layouts, while dynamically expanding rows and columns without breaking the template's formatting.</p></div>
+                <div class="case-block"><h4>Solution</h4><p>Split the engine into two independent templates — a JSON data template describing the required Salesforce queries and data shape, and an Excel layout template describing presentation — so the core engine only interprets templates and never contains quote-specific logic. Rendering dynamically expands rows and columns from the data while preserving the template's formatting, including embedded HTML-formatted content.</p></div>
+                <div class="case-block"><h4>Impact</h4><p>New or modified quote formats are introduced by creating or editing templates rather than writing new export code, keeping the core engine unchanged as formats evolve.</p></div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
