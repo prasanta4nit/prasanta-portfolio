@@ -30,3 +30,10 @@
 .tech-tags span:hover{border-color:var(--lime);color:var(--lime)}
 @media(max-width:760px){.tech-stack{margin-top:48px;padding-top:32px}.tech-grid{grid-template-columns:1fr 1fr;gap:28px 20px}}
 @media(max-width:500px){.tech-grid{grid-template-columns:1fr}}
+.principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px}
+.principles-grid article{border:1px solid var(--line);padding:28px 24px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.principles-grid article:hover{transform:translateY(-5px);box-shadow:6px 6px 0 rgba(16,35,39,.1);border-color:var(--ink)}
+.principles-grid span{font:500 10px 'DM Mono',monospace;color:var(--orange)}
+.principles-grid h3{font-size:18px;letter-spacing:-.03em;margin:16px 0 10px}
+.principles-grid p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+@media(max-width:760px){.principles-grid{grid-template-columns:1fr;gap:18px}}
