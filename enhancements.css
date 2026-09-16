@@ -1,3 +1,4 @@
+.h1-name{display:block;font:700 15px Manrope,Arial,sans-serif;letter-spacing:normal;line-height:1.4;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .skip-link{position:absolute;left:16px;top:-60px;z-index:20;background:var(--ink);color:white;padding:12px 18px;font:700 12px Manrope,Arial,sans-serif;border-radius:2px;transition:top .2s}
 .skip-link:focus{top:16px}
 .header-actions,.footer-links{display:flex;align-items:center;gap:18px}
